@@ -1,0 +1,188 @@
+.bride {
+    width: 100%;
+    min-height: 100vh;
+    text-align: center;
+    padding: 8rem 4rem;
+    position: relative;
+    background: linear-gradient(
+        to bottom,
+        var(--bg-color),
+        #fff
+    );
+    overflow: hidden;
+}
+
+/* Judul Arab */
+.bride h2 {
+    font-size: 1.8rem;
+    font-family: var(--arabic);
+    font-weight: 400;
+    color: #7a7a7a;
+}
+
+/* Judul pasangan */
+.bride h3 {
+    font-size: var(--fontSize-heading-lg);
+    font-family: var(--sacramento);
+    font-weight: 400;
+    margin: 1.5rem 0 3rem;
+}
+
+/* Wrapper pasangan */
+.bride .bride_couple {
+    margin-top: 3rem;
+}
+
+.bride .bride_couple ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+/* Item pasangan */
+.bride .bride_couple li {
+    list-style: none;
+    width: 16rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Foto */
+.bride .bride_couple li figure img {
+    width: 14rem;
+    height: 14rem;
+    object-fit: cover;
+    border-radius: 50%;
+    padding: 0.5rem;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transition: transform 0.4s ease;
+}
+
+.bride .bride_couple li figure img:hover {
+    transform: scale(1.05);
+}
+
+/* Nama */
+.bride .bride_couple li figure figcaption {
+    margin-top: 1rem;
+    font-size: var(--fontSize-heading-base);
+    font-family: var(--sacramento);
+}
+
+/* Simbol & */
+.bride .bride_couple span {
+    font-size: 4rem;
+    font-family: var(--sacramento);
+    font-weight: 400;
+    margin-top: 2rem;
+    color: #c9a24d;
+}
+
+/* ORNAMEN ICON */
+.bride i {
+    font-size: 2.5rem;
+    color: rgba(201,162,77,0.35);
+    position: absolute;
+    animation: upAndDown 4s ease-in-out infinite;
+}
+
+/* posisi icon dibuat lebih natural */
+.bride i:nth-of-type(1) {
+    top: 10%;
+    right: 10%;
+}
+
+.bride i:nth-of-type(2) {
+    top: 30%;
+    left: 8%;
+}
+
+.bride i:nth-of-type(3) {
+    bottom: 30%;
+    right: 8%;
+}
+
+.bride i:nth-of-type(4) {
+    bottom: 15%;
+    left: 12%;
+}
+
+/* ================= HADIST ================= */
+
+.hadist {
+    width: 100%;
+    padding: 6rem 4rem;
+    text-align: center;
+    background-color: var(--bg-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.hadist h2 {
+    font-size: var(--fontSize-heading-lg);
+    font-family: var(--sacramento);
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+
+.hadist p {
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.hadist p span {
+    display: block;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* icon hadist */
+.hadist i {
+    font-size: 2.5rem;
+    color: rgba(201,162,77,0.35);
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    animation: upAndDown 4s infinite;
+}
+
+/* SVG wave */
+.hadist svg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.hadist svg:nth-of-type(1) {
+    top: -10rem;
+}
+
+.hadist svg:nth-of-type(2) {
+    bottom: -14rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .bride {
+        padding: 6rem 2rem;
+    }
+
+    .bride .bride_couple ul {
+        gap: 2rem;
+    }
+
+    .bride .bride_couple span {
+        margin: 1rem 0;
+    }
+
+    .hadist {
+        padding: 4rem 2rem;
+    }
+}
