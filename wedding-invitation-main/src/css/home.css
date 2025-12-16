@@ -1,0 +1,140 @@
+.home {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    background:
+        radial-gradient(circle at top, #fff5f8, var(--bg-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    transition: all 2s ease;
+    transform: translateY(-100%);
+}
+
+.home.active {
+    transform: translateY(0);
+}
+
+/* ORNAMEN HALUS */
+.home::before {
+    content: "❀";
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+    font-size: 4rem;
+    opacity: .12;
+}
+
+.home h2 {
+    font-size: 2.6rem;
+    font-family: var(--sacramento);
+    font-weight: 400;
+    margin-bottom: .5rem;
+}
+
+.home figure {
+    margin: 2rem auto 0;
+}
+
+.home figure img {
+    width: 10.5rem;
+    height: 10.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #fff;
+    padding: 6px;
+    border: 5px solid #f3c6d3;
+    box-shadow: 0 12px 30px rgba(0,0,0,.15);
+}
+
+.home figure figcaption {
+    margin: .8rem 0 .5rem;
+    font-weight: 400;
+    font-family: var(--sacramento);
+    font-size: var(--fontSize-heading-lg);
+}
+
+.home h3 {
+    font-weight: 500;
+    margin-bottom: .5rem;
+}
+
+/* COUNTDOWN */
+.home .home-time {
+    margin-top: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.home .home-time div {
+    width: 3.5rem;
+    height: 3.5rem;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0,0,0,.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home .home-time div p {
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.home .home-time div p span {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 400;
+    opacity: .7;
+    margin-top: .2rem;
+}
+
+/* BUTTON KALENDER */
+.home a {
+    padding: 0.6rem 1.6rem;
+    color: #fff;
+    font-size: 1rem;
+    background: linear-gradient(135deg, #e9a7b2, #d47fa6);
+    margin: 1.4rem auto;
+    border-radius: 30px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: 0 8px 20px rgba(212,127,166,.4);
+    transition: transform .3s ease;
+}
+
+.home a:hover {
+    transform: translateY(-2px);
+}
+
+.home a i {
+    font-size: 1.2rem;
+}
+
+/* SCROLL */
+.home .scroll_down {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: .8rem;
+    opacity: .8;
+}
+
+/* SVG WAVE */
+.home svg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -14rem;
+    z-index: -10;
+}
