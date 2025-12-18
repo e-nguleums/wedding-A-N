@@ -58,18 +58,6 @@ export const data = {
             id: 2,
             image: './src/assets/images/2.png'
         },
-        {
-            id: 3,
-            image: './src/assets/images/3.png'
-        },
-        {
-            id: 4,
-            image: './src/assets/images/4.png'
-        },
-        {
-            id: 5,
-            image: './src/assets/images/5.png'
-        }
     ],
 
     bank: [
