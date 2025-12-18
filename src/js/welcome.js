@@ -21,7 +21,8 @@ export const welcome = () => {
             <img class="photo-img" src="${coupleImage}" alt="couple photo">
         </div>
         <figcaption class="welcome-names">
-            <span>Agung &</span>
+            <span>Agung</span>
+            <span class="amp">&</span>
             <span>Nurhalimah</span>
         </figcaption>
     `;

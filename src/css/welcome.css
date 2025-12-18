@@ -123,6 +123,40 @@
     margin-bottom: 0.05rem;
 }
 
+/* Ampersand styling: position slightly lower so it sits between the names */
+.welcome-names .amp {
+    display: inline-block;
+    transform: translateY(0.45rem);
+    font-size: 2.6rem;
+    line-height: 1;
+    margin: 0 0.2rem;
+}
+
+/* Move the 'Buka Undangan' button slightly down to match design */
+.welcome button {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+
+    background-color: #ffffff;
+    color: #2f2f2f;
+
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1.6rem; /* nudged down */
+}
+
+@media (max-width: 480px) {
+    .welcome-names .amp {
+        transform: translateY(0.3rem);
+        font-size: 2.2rem;
+    }
+}
+
 /* ===============================
    TEKS TAMU
    =============================== */
