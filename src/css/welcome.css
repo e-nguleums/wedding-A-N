@@ -87,6 +87,12 @@
     background-size: contain; /* let svg scale naturally to frame */
     z-index: 2; /* sit above photo but respect stacking context */
     pointer-events: none;
+
+    /* gentle entrance */
+    opacity: 0;
+    transform: scale(0.98);
+    will-change: opacity, transform;
+    animation: frameIn .7s .35s ease forwards;
 }
 .welcome-frame {
     overflow: visible; /* ensure overlay is not clipped */

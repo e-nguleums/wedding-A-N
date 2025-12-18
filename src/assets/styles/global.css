@@ -166,6 +166,22 @@ p {
     background-size: contain;
     z-index: 2;
     pointer-events: none;
+
+    /* animate in gently */
+    opacity: 0;
+    transform: scale(0.98);
+    will-change: opacity, transform;
+    animation: frameIn .7s .25s ease forwards;
+}
+
+@keyframes frameIn {
+    from { opacity: 0; transform: scale(0.98); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+/* AOS fallback: prefer transform/opacity only, minimal jank */
+[data-aos] {
+    will-change: opacity, transform;
 }
 
 /* SITE-WIDE ORNAMENTS: fixed corner decorations visible on every page */
@@ -177,6 +193,22 @@ p {
     z-index: 9999; /* default high, specific bottom ornaments will be lowered */
     pointer-events: none;
     opacity: 0.98;
+
+    /* entrance animation (fade + slight slide/scale) */
+    will-change: opacity, transform;
+    opacity: 0; /* start invisible */
+    transform: translateY(-8px) scale(0.98);
+    animation: ornamentIn 0.8s ease forwards;
+}
+
+.site-ornament-top-left { animation-delay: 0.12s; }
+.site-ornament-top-right { animation-delay: 0.22s; }
+.site-ornament-bottom-left { animation-delay: 0.32s; }
+.site-ornament-bottom-right { animation-delay: 0.42s; }
+
+@keyframes ornamentIn {
+    from { opacity: 0; transform: translateY(-8px) scale(0.98); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 /* Respect device safe areas (notch, rounded corners) */
