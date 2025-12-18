@@ -8,7 +8,11 @@ import {welcome} from "./js/welcome.js";
 
 // load content
 document.addEventListener('DOMContentLoaded', () => {
-    AOS.init();
+    AOS.init({
+        disable: function() { return window.innerWidth <= 768; }, // disable on small devices
+        duration: 500, // shorter default animation
+        once: true
+    });
 
     welcome();
     navbar();

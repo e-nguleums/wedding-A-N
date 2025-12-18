@@ -41,7 +41,7 @@ export const data = {
                 finish: 'Selesai'
             }
         },
-        address: 'Blok.Babakanjati, RT 01/ RW 04, Dsn.Sindangsari, Ds.Sukamaju, Kec.Mangunjaya, Kab.Pangandaran'
+        address: 'Blok.Babakanjati, RT.01/RW.04, Dusun.Sindangsari, Desa.Sukamaju, Kecamatan.Mangunjaya, Kabupaten.Pangandaran'
     },
 
     link: {
@@ -66,6 +66,12 @@ export const data = {
             name: 'Nurhalimah',
             icon: './src/assets/images/bni.png',
             rekening: '1738733291'
+        },
+        {
+            id: 2,
+            name: 'Agung Aprianto',
+            icon: './src/assets/images/bca.png',
+            rekening: '5721480331'
         },
     ],
 

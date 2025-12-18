@@ -209,6 +209,8 @@ p {
     .site-ornament {
         width: clamp(64px, 28vw, 200px); /* larger on mobile */
         opacity: 0.98;
+        /* stop continuous animations on mobile to reduce jank */
+        animation: none !important;
     }
 
     .site-ornament-top-right, .site-ornament-top-left {
@@ -217,5 +219,15 @@ p {
 
     .site-ornament-bottom-right, .site-ornament-bottom-left {
         bottom: calc(0.2rem + env(safe-area-inset-bottom));
+    }
+
+    /* stop ornament / decorative element animations to improve performance */
+    .bride i, .hadist i, .audio button.active {
+        animation: none !important;
+    }
+
+    /* shorten general transition times to make UI feel snappier */
+    * {
+        transition-duration: .25s !important;
     }
 } 

@@ -23,18 +23,32 @@
 }
 
 .wishas div:nth-of-type(1) > div figure {
-    width: 24rem;
+    width: 32rem; /* wider to better fit larger bank logos */
     text-align: center;
     border-radius: 15px;
-    padding: 1rem 0;
+    padding: 1.6rem 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 -1px 1px rgba(0, 0, 0, 0.1);
 }
 
 .wishas div:nth-of-type(1) > div figure img {
-    width: 10rem;
-    height: 3rem;
+    width: 18rem; /* larger logo size for BNI/BCA */
+    height: auto;
+    max-height: 6rem;
     object-fit: contain;
     margin-bottom: 1rem;
+}
+
+/* Responsive adjustments: keep logos large but fit small screens */
+@media (max-width: 480px) {
+    .wishas div:nth-of-type(1) > div figure {
+        width: 94%;
+        padding: 1rem 0;
+    }
+
+    .wishas div:nth-of-type(1) > div figure img {
+        width: 12rem;
+        max-height: 4rem;
+    }
 }
 
 .wishas div:nth-of-type(1) > div figure figcaption {

@@ -5,18 +5,18 @@ header {
 header nav {
     display: none;
     width: 100%;
-    padding: 0 2.2rem; /* extra side padding so corner ornaments don't cover first/last items */
+    padding: 0 3rem; /* more side padding so items don't touch edges */
     background-color: var(--bg-color);
     align-items: center;
     justify-content: center; /* center the items so they're away from edges */
-    gap: 0.6rem; /* spacing between items */
+    gap: 1rem; /* spacing between items */
     position: fixed;
     left: 0;
     right: 0;
     bottom: -100%;
-    z-index: 99;
+    z-index: 10001; /* sit above corner ornaments */
     transform: translateY(0);
-    transition: bottom 2s ease, transform 1s ease;
+    transition: bottom .25s ease, transform .25s ease; /* faster show/hide */
 }
 
 header nav.active {
@@ -56,8 +56,8 @@ header nav a:hover {
 /* Responsive tweaks: keep nav compact on small screens */
 @media (max-width: 480px) {
     header nav {
-        padding: 0 1rem;
-        gap: 0.45rem;
+        padding: 0 1.6rem; /* give a bit more breathing room on phones */
+        gap: 0.6rem;
     }
 
     header nav a span {
