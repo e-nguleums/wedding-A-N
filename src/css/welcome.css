@@ -6,15 +6,15 @@
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    background-color: #212529;
+
+    background-color: #f9f7f3;
+    color: #2f2f2f;
+
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     z-index: 99;
-    color: #fff;
-    transition: all 2s ease-in;
+
+    transition: all 1.6s ease;
     opacity: 0;
     transform: translateY(-100%);
 }
@@ -25,64 +25,145 @@
 }
 
 .welcome.hide {
-    top: -100%;
+    transform: translateY(-100%);
     opacity: 0;
 }
 
-.welcome h2 {
-    font-size: 2.4rem;
+/* ===============================
+   TITLE
+   =============================== */
+.welcome h2,
+.welcome-title span {
     font-family: var(--sacramento);
     font-weight: 400;
+    color: #2f2f2f;
 }
 
+.welcome-title span {
+    display: block;
+    font-size: 2.2rem;
+    line-height: 1.2;
+}
+
+/* ===============================
+   FIGURE
+   =============================== */
 .welcome figure {
-    display: inherit;
-    align-items: inherit;
-    justify-content: inherit;
-    flex-direction: inherit;
-    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1.4rem 0;
 }
 
-.welcome figure img {
-    width: 10rem;
-    height: 10rem;
+/* ===============================
+   PHOTO FRAME (FINAL & BERSIH)
+   =============================== */
+.welcome-frame {
+    position: relative;
+    width: 14rem;
+    height: 14rem;
     border-radius: 50%;
-    object-fit: cover;
-    box-shadow: var(--shadow-md);
-    border: 2px solid #fff;
+    margin: 1.5rem 0;
 }
 
-.welcome figure figcaption {
-    font-size: var(--fontSize-heading-base);
+/* FOTO */
+.welcome-frame .photo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    position: relative;
+    z-index: 1;
+}
+
+/* BINGKAI OVERLAY (SATU-SATUNYA) */
+.welcome-frame::after {
+    content: "";
+    position: absolute;
+    inset: -14%;
+    background: url("../assets/ornaments/bingkai.svg") no-repeat center;
+    background-size: contain;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* ===============================
+   NAMA MEMPELAI
+   =============================== */
+.welcome-names span {
+    display: block;
     font-family: var(--sacramento);
-    font-weight: 400;
-    margin-top: 0.5rem;
+    font-size: 2.6rem;
+    line-height: 1.15;
+    text-align: center;
+    color: #2f2f2f;
+}
+
+/* ===============================
+   TEKS TAMU
+   =============================== */
+.welcome p {
+    color: #6b6b6b;
+    margin-top: 1rem;
 }
 
 .welcome p span {
-    font-size: 2rem;
-    margin: 1rem 0;
     display: block;
+    font-size: 1.6rem;
+    margin-top: 0.4rem;
+    color: #2f2f2f;
 }
 
+/* ===============================
+   BUTTON
+   =============================== */
 .welcome button {
-    display: inherit;
-    align-items: inherit;
-    justify-content: inherit;
+    display: flex;
+    align-items: center;
     gap: 0.4rem;
-    color: #000;
-    padding: 0.5rem 1rem;
-    border: none;
-    transition: var(--transition-small);
-    border-radius: 15px;
+
+    background-color: #ffffff;
+    color: #2f2f2f;
+
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .welcome button:hover {
-    color: #fff;
-    background-color: #000;
+    background-color: #2f2f2f;
+    color: #ffffff;
 }
 
 .welcome button i {
     font-size: 1.2rem;
 }
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+@media (max-width: 480px) {
+    .welcome-title span {
+        font-size: 1.9rem;
+    }
+
+    .welcome-names span {
+        font-size: 2.3rem;
+    }
+
+    .welcome-frame {
+        width: 12rem;
+        height: 12rem;
+    }
+
+    .welcome-frame::after {
+        inset: -16%;
+    }
+}
+
+

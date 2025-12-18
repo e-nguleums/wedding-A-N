@@ -1,5 +1,5 @@
-import {data} from "../assets/data/data.js";
-import {addClassElement, getQueryParameter, removeClassElement} from "../utils/helper.js";
+import { data } from "../assets/data/data.js";
+import { addClassElement, getQueryParameter, removeClassElement } from "../utils/helper.js";
 
 export const welcome = () => {
     const welcomeElement = document.querySelector('.welcome');
@@ -10,35 +10,54 @@ export const welcome = () => {
     const [audioMusic, audioButton] = document.querySelector('.audio').children;
     const [iconButton] = audioButton.children;
 
+    /* ===============================
+       FOTO + NAMA MEMPELAI (FIXED)
+       =============================== */
     const generateFigureContent = (bride) => {
-        const {L: {name: brideLName}, P: {name: bridePName}, couple: coupleImage} = bride;
-        return `
-            <img src="${coupleImage}" alt="couple animation">
-            <figcaption>
-                ${brideLName.split(' ')[0]} & ${bridePName.split(' ')[0]}
-            </figcaption>`;
-    };
+    const { couple: coupleImage } = bride;
 
+    return `
+        <div class="photo-frame welcome-frame">
+            <img class="photo-img" src="${coupleImage}" alt="couple photo">
+        </div>
+        <figcaption class="welcome-names">
+            <span>Agung &</span>
+            <span>Nurhalimah</span>
+        </figcaption>
+    `;
+};
+
+    /* ===============================
+       PARAMETER TAMU
+       =============================== */
     const generateParameterContent = () => {
         const name = document.querySelector('#name');
         const params = getQueryParameter('to');
 
         if (params) {
-            weddingToElement.innerHTML = `Kepada Yth Bapak/Ibu/Saudara/i<br><span>${params}</span>`;
+            weddingToElement.innerHTML = `
+                Kepada Yth Bapak/Ibu/Saudara/i<br>
+                <span>${params}</span>
+            `;
             name.value = params;
         } else {
-            weddingToElement.innerHTML = `Kepada Yth Bapak/Ibu/Saudara/i<br><span>Teman-teman semua</span>`;
+            weddingToElement.innerHTML = `
+                Kepada Yth Bapak/Ibu/Saudara/i<br>
+                <span>Teman-teman semua</span>
+            `;
         }
-    }
+    };
 
+    /* ===============================
+       AUDIO
+       =============================== */
     const initialAudio = () => {
         let isPlaying = false;
 
-        audioMusic.innerHTML = `<source src=${data.audio} type="audio/mp3"/>`;
+        audioMusic.innerHTML = `<source src="${data.audio}" type="audio/mp3"/>`;
 
         audioButton.addEventListener('click', () => {
-
-            if (isPlaying) {
+            if (!isPlaying) {
                 addClassElement(audioButton, 'active');
                 removeClassElement(iconButton, 'bx-play-circle');
                 addClassElement(iconButton, 'bx-pause-circle');
@@ -53,6 +72,9 @@ export const welcome = () => {
         });
     };
 
+    /* ===============================
+       OPEN WEDDING
+       =============================== */
     openWeddingButton.addEventListener('click', () => {
         addClassElement(document.body, 'active');
         addClassElement(welcomeElement, 'hide');
@@ -71,12 +93,15 @@ export const welcome = () => {
         }, 3000);
     });
 
+    /* ===============================
+       INIT
+       =============================== */
     const initializeWelcome = () => {
         figureElement.innerHTML = generateFigureContent(data.bride);
         generateParameterContent();
         addClassElement(welcomeElement, 'active');
-    }
+    };
 
     initializeWelcome();
     initialAudio();
-}
+};

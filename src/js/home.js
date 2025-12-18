@@ -6,17 +6,16 @@ export const home = () => {
     const homeContainer = document.querySelector('.home');
     const [_, figureElement, timeElement, homeTime, calendarAnchor] = homeContainer.children;
 
+    /* FOTO + BINGKAI (PAKAI GLOBAL FRAME) */
     const generateFigureContent = ({ bride }) => {
-        const {
-            L: { name: brideLName },
-            P: { name: bridePName },
-            couple: coupleImage
-        } = bride;
+        const { couple: coupleImage } = bride;
 
         return `
-            <img src="${coupleImage}" alt="couple animation">
+            <div class="photo-frame">
+                <img class="photo-img" src="${coupleImage}" alt="couple photo">
+            </div>
             <figcaption>
-                ${brideLName.split(' ')[0]} & ${bridePName.split(' ')[0]}
+                ${bride.L.name.split(' ')[0]} & ${bride.P.name.split(' ')[0]}
             </figcaption>
         `;
     };

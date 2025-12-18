@@ -50,21 +50,29 @@
     align-items: center;
 }
 
-/* Foto */
-.bride .bride_couple li figure img {
-    width: 14rem;
-    height: 14rem;
-    object-fit: cover;
-    border-radius: 50%;
-    padding: 0.5rem;
-    background: #fff;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    transition: transform 0.4s ease;
+/* Foto dihapus: tampilkan hanya nama mempelai dan orangtua */
+.bride .bride_couple li {
+    width: auto;
+    max-width: 20rem;
+    text-align: center;
 }
 
-.bride .bride_couple li figure img:hover {
-    transform: scale(1.05);
+.bride .bride_couple li figure {
+    margin: 0;
 }
+
+.bride .bride_couple li figure figcaption {
+    margin-top: 0.4rem;
+    font-size: var(--fontSize-heading-base);
+    font-family: var(--sacramento);
+}
+
+/* Hapus bingkai khusus pada bride (tidak diperlukan karena foto dihapus) */
+.bride .photo-frame::after {
+    content: none;
+}
+
+
 
 /* Nama */
 .bride .bride_couple li figure figcaption {
