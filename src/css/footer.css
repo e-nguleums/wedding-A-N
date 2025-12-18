@@ -3,6 +3,8 @@ footer {
     width: 100%;
     padding: 4rem 8rem;
     text-align: center;
+    position: relative;
+    z-index: 99999; /* ensure footer overlays bottom ornaments */
 }
 
 footer h2 {

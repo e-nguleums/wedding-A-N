@@ -92,13 +92,23 @@
 /* ===============================
    NAMA MEMPELAI
    =============================== */
+.welcome-names {
+    display: inline-block;
+    text-align: center;
+}
+
 .welcome-names span {
     display: block;
     font-family: var(--sacramento);
     font-size: 3.2rem; /* increased */
     line-height: 1.05;
-    text-align: center;
+    margin: 0; /* remove extra spacing */
     color: #2f2f2f;
+}
+
+/* reduce vertical gap between the & and second name */
+.welcome-names span + span {
+    margin-top: 0.25rem;
 }
 
 /* ===============================
